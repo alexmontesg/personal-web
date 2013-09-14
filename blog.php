@@ -1,3 +1,9 @@
+<?php
+	include_once 'includes/db_connect.php';
+	$query = $db -> prepare("SELECT post_id, title, LEFT(body, 1000) AS body, category FROM posts INNER JOIN categories ON categories.category_id=posts.category_id ORDER BY posted DESC");
+	$query -> execute();
+	$query -> bind_result($post_id, $title, $body, $category);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -57,7 +63,19 @@
 		<header class="row">
 			<h2>Blog</h2>
 		</header>
-
+			<?php
+				while ($query -> fetch()) :
+					$body = strip_tags($body);
+					$lastspace = strrpos($body, ' ');
+			?>
+			<article>
+				<h3><a href="post?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
+				<p><?php echo substr($body, 0, $lastspace); ?></p>
+				<p><a href="post?id=<?php echo $post_id; ?>">Continuar leyendo</a></p>
+				<p>Archivado en <?php echo $category; ?></p>
+			</article>
+			<hr />
+			<?php endwhile; ?>
 		<?php include_once 'footer.php'; ?>
 		
 	</body>
