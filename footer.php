@@ -7,7 +7,17 @@
 				</p>
 			</header>
 			<ul class="no-bullet">
-
+				<?php
+					include_once 'includes/db_connect.php';
+					$query = $db -> query("SELECT title, post_id FROM posts ORDER BY posted DESC LIMIT 5");
+					while($row = $query -> fetch_object()) {
+				?>
+					<li>
+						<a href="http://www.josemalvarez.es/"><?php echo $row -> title; ?></a>
+					</li>
+				<?php		
+					}
+				?>
 			</ul>
 		</div>
 		<div class="large-4 small-12 columns">

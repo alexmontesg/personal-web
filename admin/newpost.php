@@ -1,28 +1,30 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+if(!isset($_SESSION['user_id'])) {
 	header('Location: login');
 	exit();
 }
 include_once '../includes/db_connect.php';
-$query = $db -> query('SELECT COUNT(*) AS number FROM posts');
-$post_count = $query -> fetch_object() -> number;
-$query = $db -> query('SELECT COUNT(*) AS number FROM comments');
-$comment_count = $query -> fetch_object() -> number;
-
-if (isset($_POST['submit'])) {
+if(isset($_POST['submit'])) {
+	$title = $_POST['title'];
+	$body = $_POST['body'];
 	$category = $_POST['category'];
-	if(!empty($category)) {
+	if($title && $body && $category) {
+		$title = strip_tags($title);
+		$title = $db -> real_escape_string($title);
+		$body = $db -> real_escape_string($body);
 		$category = strip_tags($category);
 		$category = $db -> real_escape_string($category);
-		$query = $db -> query("INSERT INTO categories (category) VALUES ('$category')");
+		$user_id = $_SESSION['user_id'];
+		$date = date('Y-m-d H:i:s');
+		$query = $db -> query("INSERT INTO posts (user_id, title, body, category_id, posted) VALUES ('$user_id', '$title', '$body', '$category', '$date')");
 		if($query) {
-			$success = "Categoría '$category' añadida correctamente";
+			$success = "Post publicado correctamente";
 		} else {
-			$error = "Error añadiendo categoría";
+			$error = "Error publicando el post";
 		}
 	} else {
-		$error = "Falta la categoría para añadir";
+		$error = "Falta información para publicar el post";
 	}
 }
 ?>
@@ -75,8 +77,8 @@ if (isset($_POST['submit'])) {
 						<a href="../vitae">Currículum</a>
 					</li>
 					<li class="divider"></li>
-					<li>
-						<a href="newpost">Nuevo post</a>
+					<li class="active">
+						<a href="#">Nuevo post</a>
 					</li>
 					<li class="divider"></li>
 					<li class="has-form">
@@ -87,36 +89,29 @@ if (isset($_POST['submit'])) {
 			</section>
 		</nav>
 		<div class="row">
-			<div class="large-6 small-12 columns large-centered">
-				<table>
-					<tr>
-						<th>Cantidad de posts</th>
-						<td><?php echo $post_count; ?></td>
-					</tr>
-					<tr>
-						<th>Cantidad de comentarios</th>
-						<td><?php echo $comment_count; ?></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div class="row">
-			<div class="large-8 small-12 columns large-centered">
+			<form action="newpost" method="post">
 				<?php include_once '../includes/error_msg.php'; ?>
-				<form action="index" method="post">
-					<div class="large-8 small-8 columns">
-						<div class="large-4 small-4 columns">
-							<label for="category" class="right inline">Categoría</label>
-						</div>
-						<div class="large-8 small-8 columns">
-							<input type="text" name="category" id="category" required="required" />
-						</div>
-					</div>
-					<div class="large-4 small-4 columns">
-						<input type="submit" name="submit" class="small button expand" value="Añadir" />
-					</div>
-				</form>
-			</div>
+				<label for="title">Título</label>
+				<input type="text" name="title" id="title" required="required" />
+				<label for="body">Texto</label>
+				<textarea name="body" id="body"></textarea>
+				<label for="category">Categoría</label>
+				<select name="category" id="category">
+					<?php
+						$query = $db -> query("SELECT * FROM categories");
+						while($row = $query -> fetch_object()) {
+					?>
+					<option value="<?php echo $row -> category_id?>">
+						<?php echo $row -> category?>
+					</option>
+					<?php		
+						}
+					?>
+				</select>
+				<div class="large-2 small-12 large-offset-10 columns">
+					<input type="submit" name="submit" value="Publicar" class="small button expand" />
+				</div>
+			</form>
 		</div>
 		<?php include_once '../footer.php'; ?>
 	</body>

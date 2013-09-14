@@ -154,7 +154,7 @@
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
 		
-		<?php include 'footer.php'; ?>
+		<?php include_once 'footer.php'; ?>
 		
 	</body>
 </html>

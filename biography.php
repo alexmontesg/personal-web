@@ -151,7 +151,7 @@
 			</section>
 		</div>
 
-		<?php include 'footer.php'; ?>
+		<?php include_once 'footer.php'; ?>
 
 		<script type="text/javascript">
 			$(document).ready(function() {

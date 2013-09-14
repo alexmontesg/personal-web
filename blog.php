@@ -60,7 +60,7 @@
 			<h2>Blog</h2>
 		</header>
 
-		<?php include 'footer.php'; ?>
+		<?php include_once 'footer.php'; ?>
 		
 	</body>
 </html>

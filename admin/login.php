@@ -84,16 +84,7 @@ if (isset($_POST['submit'])) {
 
 		<div class="row">
 			<div class="large-6 small-12 columns large-centered">
-				<?php
-				if(!empty($error)) {
-				?>
-				<div data-alert class="alert-box alert">
-					<?php echo $error; ?>
-					<a href="#" class="close">&times;</a>
-				</div>
-				<?php
-				}
-				?>
+				<?php include_once '../includes/error_msg.php'; ?>
 				<form action="login" method="post">
 					<fieldset>
 						<legend>
@@ -115,6 +106,6 @@ if (isset($_POST['submit'])) {
 			</div>
 		</div>
 
-		<?php include_once '../footer.php' ?>
+		<?php include_once '../footer.php'; ?>
 	</body>
 </html>
