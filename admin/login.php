@@ -3,7 +3,7 @@ session_start();
 if (isset($_POST['submit'])) {
 	$user = $_POST['username'];
 	$pass = $_POST['password'];
-	include_once ('../includes/db_connect.php');
+	include_once '../includes/db_connect.php';
 	if (empty($user) || empty($pass)) {
 		$error = "Faltan el nombre de usuario o la contraseña";
 	} else {
@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 		$pass = strip_tags($pass);
 		$pass = $db -> real_escape_string($pass);
 		$pass = md5($pass);
-		$query = $db -> query("SELECT user_id, username FROM users WHERE username='$user' AND password='$pass'");
+		$query = $db -> query("SELECT user_id FROM users WHERE username='$user' AND password='$pass'");
 		if ($query -> num_rows === 1) {
 			while ($row = $query -> fetch_object()) {
 				$_SESSION['user_id'] = $row -> user_id;
@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
 				<?php
 				}
 				?>
-				<form action="login.php" method="post">
+				<form action="login" method="post">
 					<fieldset>
 						<legend>
 							Iniciar sesión
@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
 							<label>Contraseña</label>
 							<input type="password" required="required" name="password" />
 						</div>
-						<div class="large-4 small-12 large-offset-8 columns">
+						<div class="large-5 small-12 large-offset-7 columns">
 							<input type="submit" name="submit" value="Iniciar sesión" class="button expand" />
 						</div>
 					</fieldset>
@@ -115,6 +115,6 @@ if (isset($_POST['submit'])) {
 			</div>
 		</div>
 
-		<?php include '../footer.php' ?>
+		<?php include_once '../footer.php' ?>
 	</body>
 </html>
