@@ -86,7 +86,7 @@
 					$body = strip_tags($body);
 					$lastspace = strrpos($body, ' ');
 			?>
-			<article>
+			<article class="row">
 				<h3><a href="post?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
 				<p><?php echo substr($body, 0, $lastspace); ?></p>
 				<p><a href="post?id=<?php echo $post_id; ?>">Continuar leyendo</a></p>

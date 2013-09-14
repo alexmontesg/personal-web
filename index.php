@@ -25,8 +25,7 @@
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
 		<header class="row">
-			<h1 id="name">Ale
-			<wbr>jandro</wbr>
+			<h1 id="name">Ale<wbr>jandro</wbr>
 			Montes García</h1>
 			<h3 class="hide-for-small" id="description">Me llamo Alejandro Montes García, tengo 22 años. Soy estudiante del Máster en Ingeniería Web de la Universidad de Oviedo e investigador en el grupo <abbr title="Web Semantics Oviedo">WESO</abbr>.</h3>
 			<hr class="hide-for-small"/>
