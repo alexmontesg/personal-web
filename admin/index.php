@@ -5,10 +5,26 @@ if (!isset($_SESSION['user_id'])) {
 	exit();
 }
 include_once '../includes/db_connect.php';
-$query = $db->query('SELECT COUNT(*) AS number FROM posts');
+$query = $db -> query('SELECT COUNT(*) AS number FROM posts');
 $post_count = $query -> fetch_object() -> number;
-$query = $db->query('SELECT COUNT(*) AS number FROM comments');
+$query = $db -> query('SELECT COUNT(*) AS number FROM comments');
 $comment_count = $query -> fetch_object() -> number;
+
+if (isset($_POST['submit'])) {
+	$category = $_POST['category'];
+	if(!empty($category)) {
+		$category = strip_tags($category);
+		$category = $db -> real_escape_string($category);
+		$query = $db -> query("INSERT INTO categories (category) VALUES ('$category')");
+		if($query) {
+			$success = "Categoría '$category' añadida correctamente";
+		} else {
+			$error = "Error añadiendo categoría";
+		}
+	} else {
+		$error = "Falta la categoría para añadir";
+	}
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -82,6 +98,40 @@ $comment_count = $query -> fetch_object() -> number;
 						<td><?php echo $comment_count ?></td>
 					</tr>
 				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-8 small-12 columns large-centered">
+				<?php
+					if(!empty($error)) {
+				?>
+				<div data-alert class="alert-box alert">
+					<?php echo $error; ?>
+					<a href="#" class="close">&times;</a>
+				</div>
+				<?php
+					} else if(!empty($success)) {
+				?>
+				<div data-alert class="alert-box success">
+					<?php echo $success; ?>
+					<a href="#" class="close">&times;</a>
+				</div>
+				<?php
+					}
+				?>
+				<form action="index" method="post">
+					<div class="large-8 small-8 columns">
+						<div class="large-4 small-4 columns">
+							<label for="category" class="right inline">Categoría</label>
+						</div>
+						<div class="large-8 small-8 columns">
+							<input type="text" name="category" id="category" required="required" />
+						</div>
+					</div>
+					<div class="large-4 small-4 columns">
+						<input type="submit" name="submit" class="small button expand" value="Añadir" />
+					</div>
+				</form>
 			</div>
 		</div>
 		<?php include_once '../footer.php'
