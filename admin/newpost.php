@@ -50,42 +50,10 @@ if(isset($_POST['submit'])) {
 		<script src="../js/vendor/custom.modernizr.js"></script>
 	</head>
 	<body>
-		<nav class="top-bar">
-			<ul class="title-area">
-				<li class="name">
-					<h1><a href="../index">Alejandro Montes García</a></h1>
-				</li>
-				<li class="toggle-topbar menu-icon">
-					<a href="#"><span>Menú</span></a>
-				</li>
-			</ul>
-
-			<section class="top-bar-section">
-				<ul class="right">
-					<li class="divider"></li>
-					<li>
-						<a href="../biography">Biografía</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="../blog">Blog</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="../vitae">Currículum</a>
-					</li>
-					<li class="divider"></li>
-					<li class="active">
-						<a href="#">Nuevo post</a>
-					</li>
-					<li class="divider"></li>
-					<li class="has-form">
-						<a href="logout" class="button">Cerrar sesión</a>
-					</li>
-					<li class="divider"></li>
-				</ul>
-			</section>
-		</nav>
+		<?php
+			include_once '../navbar.php';
+			createNavbar("newpost", TRUE);
+		?>
 		<div class="row">
 			<form action="newpost" method="post">
 				<?php include_once '../includes/error_msg.php'; ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 8]>         <hctml class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
 	<!--<![endif]-->
@@ -23,37 +23,10 @@
 		<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-
-		<nav class="top-bar">
-			<ul class="title-area">
-				<!-- Title Area -->
-				<li class="name">
-					<h1><a href="index">Alejandro Montes García</a></h1>
-				</li>
-				<li class="toggle-topbar menu-icon">
-					<a href="#"><span>Menú</span></a>
-				</li>
-			</ul>
-
-			<section class="top-bar-section">
-				<ul class="right">
-					<li class="divider"></li>
-					<li class="active">
-						<a href="#">Biografía</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="blog">Blog</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="vitae">Currículum</a>
-					</li>
-					<li class="divider"></li>
-				</ul>
-			</section>
-		</nav>
-
+		<?php
+			include_once 'navbar.php';
+			createNavbar("biography");
+		?>
 		<header class="row">
 			<h2>Biografía</h2>
 			<div data-magellan-expedition="fixed">
