@@ -13,7 +13,7 @@
 					while($row = $query -> fetch_object()) {
 				?>
 					<li>
-						<a href="http://www.josemalvarez.es/"><?php echo $row -> title; ?></a>
+						<a href="/personal-web/post?id=<?php echo $row -> post_id; ?>"><?php echo $row -> title; ?></a>
 					</li>
 				<?php		
 					}

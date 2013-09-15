@@ -20,6 +20,39 @@ if(date('Ymd') === $posted -> format('Ymd')) {
 } else {
 	$posted = $posted -> format("d/m/y");	
 }
+if(isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$name = $_POST['name'];
+	$comment = $_POST['comment'];
+	if($email && $name && $comment) {
+		$email = strip_tags($email);
+		$email = $db -> real_escape_string($email);
+		$name = strip_tags($name);
+		$name = $db -> real_escape_string($name);
+		$id = strip_tags($id);
+		$id = $db -> real_escape_string($id);
+		$comment = strip_tags($comment);
+		$comment = str_replace(array("\r\n", "\n", "\r"), '<br />', $comment);
+		$comment = $db -> real_escape_string($comment);
+		$date = date('Y-m-d H:i:s');
+		$query = $db -> query("INSERT INTO comments(name, post_id, email_add, comment, commented_on) VALUES ('$name', '$id', '$email', '$comment', '$date')");
+		if($query) {
+			$success = "Gracias, tu comentario ha sido añadido";
+		} else {
+			$error = "Error añadiendo comentario" . $email . $name . $comment . $id . $date;
+		}
+	} else {
+		$error = "Faltan datos para enviar el comentario";
+	}
+}
+
+$query = $db -> query("SELECT COUNT(*) AS number FROM comments WHERE post_id='$id'");
+$comment_count = $query -> fetch_object() -> number;
+if($comment_count == 1) {
+	$comment_counter = "1 comentario";
+} else {
+	$comment_counter = $comment_count . " comentarios";
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -85,6 +118,40 @@ if(date('Ymd') === $posted -> format('Ymd')) {
 		<div class="row">
 			<?php echo $body; ?>
 		</div>
+		<hr class="row" />
+		<div class="row">
+			<h4>Publica un comentario</h4>
+			<?php include_once 'includes/error_msg.php'; ?>
+			<form action="post?id=<?php echo $id; ?>" method="post">
+				<label for="email">Correo electrónico (no se mostrará)</label>
+				<input type="email" required="required" name="email" />
+				<label for="name">Nombre</label>
+				<input type="text" required="required" name="name" />
+				<label for="comment">Comentario</label>
+				<textarea name="comment"></textarea>
+				<div class="large-2 small-12 large-offset-10 columns">
+					<input type="submit" name="submit" value="Comentar" class="small button expand" />
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<h4 class="right"><?php echo $comment_counter; ?></h4>
+		</div>
+		<?php
+			$query = $db -> query("SELECT name, comment FROM comments WHERE post_id='$id' ORDER BY commented_on ASC");
+			$first = TRUE;
+			while($row = $query -> fetch_object()):
+				if($first) {
+					$first = false;
+				} else {
+					echo "<hr class='row'/>";
+				}
+		?>
+		<article class="row">
+			<h5><?php echo $row -> name ?></h5>
+			<blockquote><?php echo $row -> comment ?></blockquote>
+		</article>
+		<?php endwhile; ?>
 		<?php include_once 'footer.php'; ?>
 		
 	</body>
