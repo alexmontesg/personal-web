@@ -3,7 +3,7 @@
 		<div class="large-4 small-12 columns">
 			<header>
 				<p>
-					Actualizaciones
+					<?php translate('updates')?>
 				</p>
 			</header>
 					<ul class="no-bullet">
@@ -21,7 +21,7 @@
 				<div class="large-4 small-12 columns">
 					<header>
 						<p>
-							Compañeros
+							<?php translate('colleagues')?>
 						</p>
 					</header>
 					<ul class="no-bullet">
