@@ -6,6 +6,26 @@ $dicc = array(
 	'cv' => 'Vitae',
 	'contact' => 'Contact',
 	'updates' => 'Updates',
-	'colleagues' => 'Colleagues & Friends'
+	'colleagues' => 'Colleagues & Friends',
+	'about' => 'About me',
+	'aboutp1' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus',
+	'aboutp2' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus',
+	'sporting' => 'Celebrating Sporting\'s permanence in La Liga (Gijón, 2009)',
+	'british' => 'Recomposing the sphinx (London, 2011)',
+	'stonehenge' => 'With the Asturian flag in Stonehenge (Stonehenge, 2011)',
+	'wallace' => 'With a William Wallace impersonator (Edinburgh, 2011)',
+	'throne' => 'Sitting in the iron throne of "A Song of Ice and Fire" (Avilés, 2012)',
+	'alcala' => 'In front of The Puerta de Alcalá (Madrid, 2013)',
+	'contactIntro' => 'You can contact me by using the following form:',
+	'name' => 'Name',
+	'email' => 'Email',
+	'message' => 'Message',
+	'send' => 'Send',
+	'workplaceIntro' => 'You can also find me in my workplace:',
+	'workplace' => 'TODO',
+	'workplaceAddress1' => 'TODO',
+	'workplaceAddress2' => 'TODO',
+	'workplacePhone' => 'TODO',
+	'workplaceMap' => '<iframe>TODO</iframe>'
 );
 ?>

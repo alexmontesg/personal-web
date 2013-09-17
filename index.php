@@ -1,4 +1,4 @@
-<?php include_once 'includes/translate.php' ?>;
+<?php include_once 'includes/translate.php'; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -28,7 +28,7 @@
 		<header class="row">
 			<h1 id="name">Ale<wbr>jandro</wbr>
 			Montes García</h1>
-			<h3 class="hide-for-small" id="description"><?php translate('description')?></h3>
+			<h3 class="hide-for-small" id="description"><?php translate('description'); ?></h3>
 			<hr class="hide-for-small"/>
 		</header>
 
@@ -37,25 +37,25 @@
 				<a href="biography">
 				<div class="button large-4 small-12 columns" id="bio-panel">
 					<p>
-						<?php translate('bio')?>
+						<?php translate('bio'); ?>
 					</p>
 				</div> </a>
 				<a href="blog">
 				<div class="button small-12" id="blog-panel">
 					<p>
-						<?php translate('blog')?>
+						<?php translate('blog'); ?>
 					</p>
 				</div> </a>
 				<a href="vitae">
 				<div class="button small-12" id="cv-panel">
 					<p>
-						<?php translate('cv')?>
+						<?php translate('cv'); ?>
 					</p>
 				</div> </a>
 			</nav>
 			<div class="large-3 small-12 columns" id="social">
 				<p>
-					<?php translate('contact')?>
+					<?php translate('contact'); ?>
 				</p>
 				<ul class="inline-list">
 					<li>
