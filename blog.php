@@ -21,6 +21,7 @@
 	$query = $db -> prepare("SELECT post_id, title, LEFT(body, 1000) AS body, category FROM posts INNER JOIN categories ON categories.category_id=posts.category_id ORDER BY posted DESC LIMIT $start, $per_page");
 	$query -> execute();
 	$query -> bind_result($post_id, $title, $body, $category);
+	include_once 'includes/translate.php';
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -32,7 +33,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Alejandro Montes García</title>
+		<title>Alejandro Montes García - <?php translate('blog'); ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -52,7 +53,7 @@
 			createNavbar("blog");
 		?>
 		<header class="row">
-			<h2>Blog</h2>
+			<h2><?php translate('bio'); ?></h2>
 		</header>
 			<?php
 				while ($query -> fetch()) :
@@ -62,8 +63,8 @@
 			<article class="row">
 				<h3><a href="post?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
 				<p><?php echo substr($body, 0, $lastspace); ?></p>
-				<p><a href="post?id=<?php echo $post_id; ?>">Continuar leyendo</a></p>
-				<p>Archivado en <?php echo $category; ?></p>
+				<p><a href="post?id=<?php echo $post_id; ?>"><?php translate('readMore'); ?></a></p>
+				<p><?php translate('categoryBlog'); ?> <?php echo $category; ?></p>
 			</article>
 			<hr />
 			<?php endwhile; ?>

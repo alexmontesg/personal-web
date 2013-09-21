@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Alejandro Montes García - <?php translate('bio')?></title>
+		<title>Alejandro Montes García - <?php translate('bio'); ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />

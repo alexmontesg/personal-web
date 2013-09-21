@@ -26,6 +26,8 @@ $dicc = array(
 	'workplaceAddress1' => 'TODO',
 	'workplaceAddress2' => 'TODO',
 	'workplacePhone' => 'TODO',
-	'workplaceMap' => '<iframe>TODO</iframe>'
+	'workplaceMap' => '<iframe>TODO</iframe>',
+	'readMore' => 'Continuar leyendo',
+	'categoryBlog' => 'Archivado en'
 );
 ?>
