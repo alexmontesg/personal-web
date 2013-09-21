@@ -1,4 +1,5 @@
 <?php
+include_once 'includes/translate.php';
 function createNavbar($active, $admin = FALSE) {
 	echo "<nav class='top-bar'>
 			<ul class='title-area'>
@@ -6,34 +7,34 @@ function createNavbar($active, $admin = FALSE) {
 					<h1><a href='index'>Alejandro Montes García</a></h1>
 				</li>
 				<li class='toggle-topbar menu-icon'>
-					<a href='#'><span>Menú</span></a>
+					<a href='#'><span>" . translate('menu') . "</span></a>
 				</li>
 			</ul>
 			<section class='top-bar-section'>
 				<ul class='right'>
 					<li class='divider'></li>\n";
 	if($active == "biography") {
-		echo "					<li class='active'><a href='#'>Biografía</a></li>";
+		echo "					<li class='active'><a href='#'>" . translate('bio') . "</a></li>";
 	} else if($admin){
-		echo "					<li><a href='../biography'>Biografía</a></li>";	
+		echo "					<li><a href='../biography'>" . translate('bio') . "</a></li>";	
 	} else {
-		echo "					<li><a href='biography'>Biografía</a></li>";	
+		echo "					<li><a href='biography'>" . translate('bio') . "</a></li>";	
 	}
 	echo "\n					<li class='divider'></li>\n";
 	if($active == "blog") {
-		echo "					<li class='active'><a href='#'>Blog</a></li>";
+		echo "					<li class='active'><a href='#'>" . translate('blog') . "</a></li>";
 	} else if($admin){
-		echo "					<li><a href='../blog'>Blog</a></li>";	
+		echo "					<li><a href='../blog'>" . translate('blog') . "</a></li>";	
 	} else {
-		echo "					<li><a href='blog'>Blog</a></li>";	
+		echo "					<li><a href='blog'>" . translate('blog') . "</a></li>";	
 	}
 	echo "\n					<li class='divider'></li>\n";
 	if($active == "vitae") {
-		echo "					<li class='active'><a href='#'>Corrículum</a></li>";
+		echo "					<li class='active'><a href='#'>" . translate('cv') . "</a></li>";
 	} else if($admin){
-		echo "					<li><a href='../vitae'>Currículum</a></li>";	
+		echo "					<li><a href='../vitae'>" . translate('cv') . "</a></li>";	
 	} else {
-		echo "					<li><a href='vitae'>Currículum</a></li>";	
+		echo "					<li><a href='vitae'>" . translate('cv') . "</a></li>";	
 	}
 	if($admin) {
 		echo "\n					<li class='divider'></li>\n";

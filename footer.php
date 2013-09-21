@@ -1,3 +1,4 @@
+<?php include_once 'includes/translate.php'; ?>
 <footer>
 	<div class="row">
 		<div class="large-4 small-12 columns">

@@ -1,5 +1,6 @@
 <?php
 $dicc = array(
+	'lang' => 'es',
 	'description' => 'Me llamo Alejandro Montes García, tengo ' . getAge() . ' años. Soy estudiante de doctorado en la Universidad Técnica de Eindhoven.',
 	'bio' => 'Biografía',
 	'blog' => 'Blog',
@@ -28,6 +29,7 @@ $dicc = array(
 	'workplacePhone' => 'TODO',
 	'workplaceMap' => '<iframe>TODO</iframe>',
 	'readMore' => 'Continuar leyendo',
-	'categoryBlog' => 'Archivado en'
+	'categoryBlog' => 'Archivado en',
+	'menu' => 'Menú'
 );
 ?>

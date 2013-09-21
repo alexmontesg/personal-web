@@ -5,6 +5,7 @@ if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 $id = $_GET['id'];
 include_once 'includes/db_connect.php';
+include_once 'includes/translate.php';
 $query = $db -> query("SELECT * FROM posts, users WHERE post_id='$id' AND posts.user_id = users.user_id");
 if($query -> num_rows != 1) {
 	header('Location: blog');
@@ -59,7 +60,7 @@ if($comment_count == 1) {
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" lang="<?php translate('lang'); ?>">
 	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
