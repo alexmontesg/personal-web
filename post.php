@@ -38,21 +38,21 @@ if(isset($_POST['submit'])) {
 		$date = date('Y-m-d H:i:s');
 		$query = $db -> query("INSERT INTO comments(name, post_id, email_add, comment, commented_on) VALUES ('$name', '$id', '$email', '$comment', '$date')");
 		if($query) {
-			$success = translate('commentSuccess');
+			$success = translateNoEcho('commentSuccess');
 		} else {
-			$error = translate('commentError1');
+			$error = translateNoEcho('commentError1');
 		}
 	} else {
-		$error = translate('commentError2');
+		$error = translateNoEcho('commentError2');
 	}
 }
 
 $query = $db -> query("SELECT COUNT(*) AS number FROM comments WHERE post_id='$id'");
 $comment_count = $query -> fetch_object() -> number;
 if($comment_count == 1) {
-	$comment_counter = "1 " . translate('comment');
+	$comment_counter = "1 " . translateNoEcho('comment');
 } else {
-	$comment_counter = $comment_count . " " . translate('comments');
+	$comment_counter = $comment_count . " " . translateNoEcho('comments');
 }
 ?>
 <!DOCTYPE html>

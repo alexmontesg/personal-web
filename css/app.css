@@ -2,6 +2,10 @@ html {
 	background: #000;
 }
 
+p {
+	text-align: justify;
+}
+
 .row {
 	margin-bottom: 1%;
 }
@@ -128,4 +132,15 @@ address p {
 	height: 80%;
 	min-height: 600px;
 	width: 100%
+}
+
+.workplace, .workdate {
+	font-size: 10pt;
+	margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 48em) {
+	.workdate {
+		text-align: right;
+	}
 }

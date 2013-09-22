@@ -57,6 +57,15 @@ $dicc = array(
 	'courses' => 'Cursos presenciales',
 	'onlineCourses' => 'Cursos online',
 	'researcher' => 'Investigador',
-	'intern' => 'Becario de servicios informáticos'
+	'intern' => 'Becario de servicios informáticos',
+	'internDesc' => 'Responsable del mantenimiento de dos salas de ordenadores con 20 ordenadores cada una, realizando trabajos de configuración y reparación de equipos. También era responsable del mantenimiento y rediseño del sitio web de la facultad donde trabajaba.',
+	'bioFac' => '<a href="http://biologia.uniovi.es/">Facultad de Biología (Universidad de Oviedo)</a>',
+	'weso' => '<a href="http://weso.es/">Grupo de investigación WESO</a>',
+	'wesoDesc' => 'Colaborador en algunos proyectos del grupo de investigación, programando y diseñando software, y llevando a cabo investigaciones en los campos relacionados con dichos proyectos.',
+	'orbitaDesc' => 'Sistema de visualización de datos enlazados, en el que la información puede ser representada de distintas formas y teniendo en cuenta diferentes perfiles de usuarios.',
+	'freewsDesc' => 'Arquitectura en web semántica para la recepción, edición y distribución de vídeo digital',
+	'queYeHoDesc' => 'Aplicación que recomienda lugares cercanos como sitios de interés turístico, pubs, museos, etc... utilizando algoritmos híbridos y datos abiertos y enlazados.',
+	'ecoXixonDesc' => 'Eventos ecológicos en Gijón, los ciudadanos competirán por ser el más ecológico, visualización de datos ambientales, y mucho más. Aplicación ganadora del II Festival de Datos Abiertos de Gijón.',
+	'webIndexDesc' => 'WESO, como socio de la World Wide Foundation, participa en el Web Index, asesorando en materia de datos enlazados, construyendo el endpoint para el Web Index y visualizaciones de estos datos.'
 );
 ?>

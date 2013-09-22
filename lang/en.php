@@ -57,6 +57,10 @@ $dicc = array(
 	'courses' => 'Courses',
 	'onlineCourses' => 'Online courses',
 	'researcher' => 'Researcher',
-	'intern' => 'IT Services Intern'
+	'intern' => 'IT Services Intern',
+	'internDesc' => 'Responsible for maintaining two computer labs of 20 computers each, performing configuration and repairment tasks. I was also responsible for mantaining and remodeling the website of the faculty where I worked.',
+	'bioFac' => '<a href="http://biologia.uniovi.es/">Biology faculty (University of Oviedo)</a>',
+	'weso' => '<a href="http://weso.es/">WESO research group</a>',
+	'wesoDesc' => 'Collaborator in some projects of the research group, programming and designing software, and carrying out research in the fields related with those projects.'
 );
 ?>

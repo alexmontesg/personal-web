@@ -1,4 +1,6 @@
-<?php include_once 'includes/translate.php'; ?>
+<?php
+include_once 'includes/translate.php';
+ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -26,8 +28,8 @@
 		<![endif]-->
 
 		<?php
-			include_once 'navbar.php';
-			createNavbar("vitae");
+		include_once 'navbar.php';
+		createNavbar("vitae");
 		?>
 
 		<header class="row">
@@ -92,35 +94,89 @@
 		
 		<section class="row" id="professional">
 			<h3 data-magellan-destination="professional"><?php translate('professional'); ?></h3>
-			<div class="large-6 small-12 columns">
-				<h4><?php translate('researcher'); ?></h4>
-			</div>
-			<div class="large-6 small-12 columns">
-				<h4>B<?php translate('intern'); ?></h4>
+			<div class="row">
+				<div class="large-6 small-12 columns">
+					<h4><?php translate('researcher'); ?></h4>
+					<div class="row">
+						<div class="large-7 small-12 columns workplace">
+							<?php translate('weso'); ?>
+						</div>
+						<div class="large-5 small-12 columns workdate">
+							21/05/2012 – 01/10/2013
+						</div>
+					</div>
+					<p><?php translate('wesoDesc'); ?></p>
+				</div>
+				<div class="large-6 small-12 columns">
+					<h4><?php translate('intern'); ?></h4>
+					<div class="row">
+						<div class="large-7 small-12 columns workplace">
+							<?php translate('bioFac'); ?>
+						</div>
+						<div class="large-5 small-12 columns workdate">
+							12/09/2011 – 21/05/2012
+						</div>
+					</div>
+					<p><?php translate('internDesc'); ?></p>
+				</div>
 			</div>
 		</section>
 		
 		<section class="row" id="projects">
 			<h3 data-magellan-destination="projects"><?php translate('projects'); ?></h3>
-			<div class="large-6 small-12 columns">
-				<h4>The Web Index</h4>
+			<div class="row">
+				<div class="large-12 small-12 columns">
+					<h4>The Web Index</h4>
+					<p><?php translate('webIndexDesc'); ?></p>
+				</div>
 			</div>
-			<div class="large-6 small-12 columns">
-				<h4>ecoXixón</h4>
+			<div class="row">
+				<div class="large-6 small-12 columns">
+					<h4>ecoXixón</h4>
+					<p><?php translate('ecoXixonDesc'); ?></p>
+				</div>
+				<div class="large-6 small-12 columns">
+					<h4>QueYeHo</h4>
+					<p><?php translate('queYeHoDesc'); ?></p>
+				</div>
 			</div>
-			<div class="large-6 small-12 columns">
-				<h4>QueYeHo</h4>
-			</div>
-			<div class="large-6 small-12 columns">
-				<h4>Freews</h4>
-			</div>
-			<div class="large-6 small-12 columns">
-				<h4>Orbita</h4>
+			<div class="row">
+				<div class="large-6 small-12 columns">
+					<h4>Freews</h4>
+					<p><?php translate('freewsDesc'); ?></p>
+				</div>
+				<div class="large-6 small-12 columns">
+					<h4>Orbita</h4>
+					<p><?php translate('orbitaDesc'); ?></p>
+				</div>
 			</div>
 		</section>
 		
 		<section class="row" id="publications">
 			<h3 data-magellan-destination="publications"><?php translate('publications'); ?></h3>
+			<div class="row">
+				<div class="large-7 small-12 columns workplace">
+					<a href="http://www.seerc.org/dsc2013/">8<sup>th</sup> South East European Doctoral Student Conference</a>
+				</div>
+				<div class="large-5 small-12 columns workdate">
+					17/09/2013
+				</div>
+				<p>
+					Alejandro Montes-García, <a href="http://www.josemalvarez.es/">Jose María Álvarez Rodríguez</a>, <a href="http://di002.edv.uniovi.es/~labra/">José Emilio Labra Gayo</a>, <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/m/Mart=iacute=nez=Merino:Marcos.html">Marcos Martínez-Merino</a>: <strong>Towards an Adaptive and Hybrid News Recommendation System for Journalists: The Wesomender Approach</strong>
+				</p>
+				<hr />
+			</div>
+			<div class="row">
+				<div class="large-7 small-12 columns workplace">
+					<a href="http://www.sciencedirect.com/science/journal/09574174/40/17">Expert Systems with Applications</a>
+				</div>
+				<div class="large-5 small-12 columns workdate">
+					01/12/2013
+				</div>
+				<p>
+					Alejandro Montes-García, <a href="http://www.josemalvarez.es/">Jose María Álvarez Rodríguez</a>, <a href="http://di002.edv.uniovi.es/~labra/">José Emilio Labra Gayo</a>, <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/m/Mart=iacute=nez=Merino:Marcos.html">Marcos Martínez-Merino</a>: <strong><a href="http://dx.doi.org/10.1016/j.eswa.2013.06.032">Towards a Journalist-Based News Recommendation System: The Wesomender Approach</a></strong>
+				</p>
+			</div>
 		</section>
 
 		<div id="modalCV" class="reveal-modal">
