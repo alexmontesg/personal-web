@@ -30,6 +30,18 @@ $dicc = array(
 	'workplaceMap' => '<iframe>TODO</iframe>',
 	'readMore' => 'Read more',
 	'categoryBlog' => 'Category:',
-	'menu' => 'Menu'
+	'menu' => 'Menu',
+	'postedHours1' => '',
+	'postedHours2' => ' hours ago',
+	'by' => 'by',
+	'postComment' => 'Post a comment',
+	'commentSuccess' => 'Thanks! Your comment has been added',
+	'commentError1' => 'There has been an error adding your comment',
+	'commentError2' => 'Missing data',
+	'comment' => 'comment',
+	'comments' => 'comments',
+	'commentMail' => 'Email (will not be displayed)',
+	'commentComment' => 'Comment',
+	'commentSubmit' => 'Post comment'
 );
 ?>

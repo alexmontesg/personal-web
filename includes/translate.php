@@ -14,15 +14,17 @@ function getAge() {
 
 
 function translate($phrase) {
+	echo translateNoEcho($phrase);
+}
+
+function translateNoEcho($phrase) {
 	switch ($_SERVER['HTTP_ACCEPT_LANGUAGE']) {
 		case 'es':
 			require './lang/es.php';		
-			echo $dicc[$phrase];
-		break;
+			return $dicc[$phrase];
 		default:
 			require './lang/en.php';
-			echo $dicc[$phrase];
-		break;
+			return $dicc[$phrase];
 	}
 }
 ?>

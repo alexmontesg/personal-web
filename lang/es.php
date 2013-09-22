@@ -30,6 +30,18 @@ $dicc = array(
 	'workplaceMap' => '<iframe>TODO</iframe>',
 	'readMore' => 'Continuar leyendo',
 	'categoryBlog' => 'Archivado en',
-	'menu' => 'Menú'
+	'menu' => 'Menú',
+	'postedHours1' => 'Hace ',
+	'postedHours2' => ' horas',
+	'by' => 'por',
+	'postComment' => 'Publica un comentario',
+	'commentSuccess' => 'Gracias, tu comentario ha sido añadido',
+	'commentError1' => 'Error añadiendo comentario',
+	'commentError2' => 'Faltan datos para enviar el comentario',
+	'comment' => 'comentario',
+	'comments' => 'comentarios',
+	'commentMail' => 'Correo electrónico (no se mostrará)',
+	'commentComment' => 'Comentario',
+	'commentSubmit' => 'Comentar'
 );
 ?>

@@ -17,9 +17,9 @@ $body = $row -> body;
 $username = $row -> username;
 $posted = new DateTime($row -> posted);
 if(date('Ymd') === $posted -> format('Ymd')) {
-	$posted = "Hace " . ((int) date('H') - (int) $posted -> format('H')) . " horas";
+	$posted = translateNoEcho('postedHours1') . ((int) date('H') - (int) $posted -> format('H')) . translateNoEcho('postedHours2');
 } else {
-	$posted = $posted -> format("d/m/y");	
+	$posted = $posted -> format("d/m/y");
 }
 if(isset($_POST['submit'])) {
 	$email = $_POST['email'];
@@ -38,21 +38,21 @@ if(isset($_POST['submit'])) {
 		$date = date('Y-m-d H:i:s');
 		$query = $db -> query("INSERT INTO comments(name, post_id, email_add, comment, commented_on) VALUES ('$name', '$id', '$email', '$comment', '$date')");
 		if($query) {
-			$success = "Gracias, tu comentario ha sido añadido";
+			$success = translate('commentSuccess');
 		} else {
-			$error = "Error añadiendo comentario" . $email . $name . $comment . $id . $date;
+			$error = translate('commentError1');
 		}
 	} else {
-		$error = "Faltan datos para enviar el comentario";
+		$error = translate('commentError2');
 	}
 }
 
 $query = $db -> query("SELECT COUNT(*) AS number FROM comments WHERE post_id='$id'");
 $comment_count = $query -> fetch_object() -> number;
 if($comment_count == 1) {
-	$comment_counter = "1 comentario";
+	$comment_counter = "1 " . translate('comment');
 } else {
-	$comment_counter = $comment_count . " comentarios";
+	$comment_counter = $comment_count . " " . translate('comments');
 }
 ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ if($comment_count == 1) {
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Alejandro Montes García</title>
+		<title>Alejandro Montes García - <?php echo $title; ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -81,39 +81,14 @@ if($comment_count == 1) {
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
 
-		<nav class="top-bar">
-			<ul class="title-area">
-				<!-- Title Area -->
-				<li class="name">
-					<h1><a href="index">Alejandro Montes García</a></h1>
-				</li>
-				<li class="toggle-topbar menu-icon">
-					<a href="#"><span>Menú</span></a>
-				</li>
-			</ul>
-
-			<section class="top-bar-section">
-				<ul class="right">
-					<li class="divider"></li>
-					<li>
-						<a href="biography">Biografía</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="blog">Blog</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="vitae">Currículum</a>
-					</li>
-					<li class="divider"></li>
-				</ul>
-			</section>
-		</nav>
+		<?php
+			include_once 'navbar.php';
+			createNavbar("none");
+		?>
 
 		<header class="row">
 			<h2><?php echo $title; ?></h2>
-			<p class="subheader right"><?php echo $posted; ?> por <?php echo $username; ?></p>
+			<p class="subheader right"><?php echo $posted; ?> <?php translate('by'); ?> <?php echo $username; ?></p>
 		</header>
 		
 		<div class="row">
@@ -121,17 +96,17 @@ if($comment_count == 1) {
 		</div>
 		<hr class="row" />
 		<div class="row">
-			<h4>Publica un comentario</h4>
+			<h4><?php translate('postComment'); ?></h4>
 			<?php include_once 'includes/error_msg.php'; ?>
 			<form action="post?id=<?php echo $id; ?>" method="post">
-				<label for="email">Correo electrónico (no se mostrará)</label>
+				<label for="email"><?php translate('commentMail'); ?></label>
 				<input type="email" required="required" name="email" />
-				<label for="name">Nombre</label>
+				<label for="name"><?php translate('name'); ?></label>
 				<input type="text" required="required" name="name" />
-				<label for="comment">Comentario</label>
+				<label for="comment"><?php translate('commentComment'); ?></label>
 				<textarea name="comment"></textarea>
 				<div class="large-2 small-12 large-offset-10 columns">
-					<input type="submit" name="submit" value="Comentar" class="small button expand" />
+					<input type="submit" name="submit" value="<?php translate('commentSubmit'); ?>" class="small button expand" />
 				</div>
 			</form>
 		</div>
