@@ -42,6 +42,21 @@ $dicc = array(
 	'comments' => 'comentarios',
 	'commentMail' => 'Correo electrónico (no se mostrará)',
 	'commentComment' => 'Comentario',
-	'commentSubmit' => 'Comentar'
+	'commentSubmit' => 'Comentar',
+	'contactMessage' => 'Gracias por ponerte en contacto conmigo, trataré de responder pronto',
+	'downloadCV' => 'Descarga mi currículum (en inglés)',
+	'certsAndAwards' => 'Certificaciones y premios',
+	'certs' => 'Certificaciones',
+	'awards' => 'Premios',
+	'education' => 'Formación',
+	'professional' => 'Profesional',
+	'projects' => 'Proyectos',
+	'publications' => 'Publicaciones',
+	'miw' => 'Máster en Ingeniería Web',
+	'itis' => 'Ingeniería Técnica en Informática de Sistemas',
+	'courses' => 'Cursos presenciales',
+	'onlineCourses' => 'Cursos online',
+	'researcher' => 'Investigador',
+	'intern' => 'Becario de servicios informáticos'
 );
 ?>

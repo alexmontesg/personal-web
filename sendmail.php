@@ -6,6 +6,6 @@ if (isset($_POST['contactName']) && isset($_POST['contactEmail']) && isset($_POS
 	$from = $_POST['contactEmail'];
 	$headers = "From: $from";
 	mail($to, $subject, $msg, $headers);
-	echo "Gracias por ponerte en contacto conmigo, trataré de responder pronto";
+	translate('contactMessage');
 }
 ?>

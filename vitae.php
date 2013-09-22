@@ -1,14 +1,15 @@
+<?php include_once 'includes/translate.php'; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" lang="<?php translate('lang'); ?>">
 	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Alejandro Montes García</title>
+		<title>Alejandro Montes García - <?php translate('cv'); ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -30,14 +31,14 @@
 		?>
 
 		<header class="row">
-			<h2>Currículum</h2>
+			<h2><?php translate('cv'); ?></h2>
 		</header>
 		<div class="row">
 			<div class="large-6 large-offset-6 columns hide-for-small">
-				<a href="#" class="button expand" data-reveal-id="modalCV">Descarga mi currículum</a>
+				<a href="#" class="button expand" data-reveal-id="modalCV"><?php translate('downloadCV'); ?></a>
 			</div>
 			<div class="show-for-small small-12 columns">
-				<a href="files/CV-MontesGarcia-EN.pdf" class="button expand">Descarga mi currículum</a>
+				<a href="files/CV-MontesGarcia-EN.pdf" class="button expand"><?php translate('downloadCV'); ?></a>
 			</div>
 		</div>
 
@@ -45,62 +46,62 @@
 			<div data-magellan-expedition="fixed">
 				<dl class="sub-nav">
 					<dd data-magellan-arrival="cert" >
-						<a href="#cert">Certificaciones y premios</a>
+						<a href="#cert"><?php translate('certsAndAwards'); ?></a>
 					</dd>
 					<dd data-magellan-arrival="edu" >
-						<a href="#edu">Formación</a>
+						<a href="#edu"><?php translate('education'); ?></a>
 					</dd>
 					<dd data-magellan-arrival="professional">
-						<a href="#professional">Profesional</a>
+						<a href="#professional"><?php translate('professional'); ?></a>
 					</dd>
 					<dd data-magellan-arrival="projects">
-						<a href="#projects">Proyectos</a>
+						<a href="#projects"><?php translate('projects'); ?></a>
 					</dd>
 					<dd data-magellan-arrival="publications">
-						<a href="#publications">Publicaciones</a>
+						<a href="#publications"><?php translate('publications'); ?></a>
 					</dd>
 				</dl>
 			</div>
 		</div>
 		
 		<section class="row" id="cert">
-			<h3 data-magellan-destination="cert">Certificaciones y premios</h3>
+			<h3 data-magellan-destination="cert"><?php translate('certsAndAwards'); ?></h3>
 			<div class="large-6 small-12 columns">
-				<h4>Certificaciones</h4>
+				<h4><?php translate('certs'); ?></h4>
 			</div>
 			<div class="large-6 small-12 columns">
-				<h4>Premios</h4>
+				<h4><?php translate('awards'); ?></h4>
 			</div>
 		</section>
 		
 		<section class="row" id="edu">
-			<h3 data-magellan-destination="edu">Formación</h3>
+			<h3 data-magellan-destination="edu"><?php translate('education'); ?></h3>
 			<div class="large-6 small-12 columns">
-				<h4>Máster en Ingeniería Web</h4>
+				<h4><?php translate('miw'); ?></h4>
 			</div>
 			<div class="large-6 small-12 columns">
-				<h4>Ingeniería Técnica en Informática de Sistemas</h4>
+				<h4><?php translate('itis'); ?></h4>
 			</div>
 			<div class="large-6 small-12 columns">
-				<h4>Cursos presenciales</h4>
+				<h4><?php translate('courses'); ?></h4>
 			</div>
 			<div class="large-6 small-12 columns">
-				<h4>Cursos online</h4>
+				<h4><?php translate('onlineCourses'); ?></h4>
 			</div>
 		</section>
 		
 		<section class="row" id="professional">
-			<h3 data-magellan-destination="professional">Profesional</h3>
+			<h3 data-magellan-destination="professional"><?php translate('professional'); ?></h3>
 			<div class="large-6 small-12 columns">
-				<h4>Investigador</h4>
+				<h4><?php translate('researcher'); ?></h4>
 			</div>
 			<div class="large-6 small-12 columns">
-				<h4>Becario de servicios informáticos</h4>
+				<h4>B<?php translate('intern'); ?></h4>
 			</div>
 		</section>
 		
 		<section class="row" id="projects">
-			<h3 data-magellan-destination="projects">Proyectos</h3>
+			<h3 data-magellan-destination="projects"><?php translate('projects'); ?></h3>
 			<div class="large-6 small-12 columns">
 				<h4>The Web Index</h4>
 			</div>
@@ -119,11 +120,11 @@
 		</section>
 		
 		<section class="row" id="publications">
-			<h3 data-magellan-destination="publications">Publicaciones</h3>
+			<h3 data-magellan-destination="publications"><?php translate('publications'); ?></h3>
 		</section>
 
 		<div id="modalCV" class="reveal-modal">
-			<embed src="files/CV-MontesGarcia-EN.pdf" alt="Currículum de Alejandro Montes García" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+			<embed src="files/CV-MontesGarcia-EN.pdf" alt="Alejandro Montes García - <?php translate('cv'); ?>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
 		

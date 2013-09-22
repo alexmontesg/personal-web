@@ -42,6 +42,21 @@ $dicc = array(
 	'comments' => 'comments',
 	'commentMail' => 'Email (will not be displayed)',
 	'commentComment' => 'Comment',
-	'commentSubmit' => 'Post comment'
+	'commentSubmit' => 'Post comment',
+	'contactMessage' => 'Thank you for your message, I will try to get back to you soon',
+	'downloadCV' => 'Download my vitae',
+	'certsAndAwards' => 'Certifications and awards',
+	'certs' => 'Certifications',
+	'awards' => 'Awards',
+	'education' => 'Education',
+	'professional' => 'Professional',
+	'projects' => 'Projects',
+	'publications' => 'Publications',
+	'miw' => 'MSc in Web Engineering',
+	'itis' => 'BSc in Computer Science',
+	'courses' => 'Courses',
+	'onlineCourses' => 'Online courses',
+	'researcher' => 'Researcher',
+	'intern' => 'IT Services Intern'
 );
 ?>
